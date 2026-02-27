@@ -1,0 +1,3 @@
+[submodule "lcr/src/mirte_lc"]
+	path = lcr/src/mirte_lc
+	url = https://github.com/machine0herald/Mirte_Lab_Clean.git

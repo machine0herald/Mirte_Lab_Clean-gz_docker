@@ -1,0 +1,7 @@
+.vscode/
+lcr/build
+lcr/install
+lcr/log
+lcr/src/gazebo_grasp_fix
+lcr/src/mirte-gazebo
+lcr/src/mirte-ros-packages
