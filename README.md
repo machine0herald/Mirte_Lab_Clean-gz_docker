@@ -1,4 +1,6 @@
-# Mirte Master Labclean Docker Container
+# Mirte Master Lab Cleanup Docker Container
+![Status](https://img.shields.io/badge/status-in%20progress-yellow)
+
 This is a Docker Container package running `Ubuntu Jammy` with `ROS 2 Humble` and `Gazebo Classic`. 
 > As the mirte ros packages have not (yet) been
 updated to ROS 2 Jazzy or for use with Gazebo Harmonic / Fortress, this repository could have deprecated or out of date packages soon.
@@ -29,6 +31,7 @@ updated to ROS 2 Jazzy or for use with Gazebo Harmonic / Fortress, this reposito
     vcs import src/ < src/mirte_lc/sources.repos
     vcs import src/ < src/mirte-gazebo/sources.repos
     ```
+
 4. update mirte_ros_packages submodule
     ```sh
     cd src/mirte-ros-packages && git submodule update --init --recursive
@@ -39,6 +42,7 @@ updated to ROS 2 Jazzy or for use with Gazebo Harmonic / Fortress, this reposito
     export DISPLAY=:0
     xhost +local:docker
     ```
+
 6. Start docker engine 
     ```sh
     sudo systemctl start docker
