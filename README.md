@@ -10,11 +10,11 @@ updated to ROS 2 Jazzy or for use with Gazebo Harmonic / Fortress, this reposito
 1. Clone repository locally
     - For developers
     ```sh
-    git clone https://github.com/machine0herald/Mirte_Lab_Clean-gz_docker/tree/main
+    git clone https://github.com/machine0herald/Mirte_Lab_Clean-gz_docker
     ```
     - For contributors
     ```sh
-    git remote add origin https://github.com/machine0herald/Mirte_Lab_Clean-gz_docker/tree/main
+    git remote add origin https://github.com/machine0herald/Mirte_Lab_Clean-gz_docker
     git pull origin main
     ```
 
@@ -34,24 +34,19 @@ updated to ROS 2 Jazzy or for use with Gazebo Harmonic / Fortress, this reposito
     cd src/mirte-ros-packages && git submodule update --init --recursive
     ```
 
-5. update the git submodules again
-    ```sh
-    git submodule update --init --recursive
-    ```
-
-6. Configure display
+5. Configure display
     ```sh
     export DISPLAY=:0
     xhost +local:docker
     ```
-7. Start docker engine 
+6. Start docker engine 
     ```sh
     sudo systemctl start docker
     ```
 
 > NOTE:  It is reccomended to use the vscode extensions instead of the following
 
-8. Build the Docker container
+7. Build the Docker container
     ```sh
     # Navigate to the directory containing the Dockerfile
     cd /path/to/ros2_humble_dev
@@ -60,7 +55,7 @@ updated to ROS 2 Jazzy or for use with Gazebo Harmonic / Fortress, this reposito
     docker build -t mirte_labclean .
     ```
 
-9. Install mirte ros packages rosdeps and build
+8. Install mirte ros packages rosdeps and build
     ```sh
     rosdep install -y --from-paths src/ --ignore-src --rosdistro humble
     colcon build --symlink-install
