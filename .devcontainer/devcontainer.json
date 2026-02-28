@@ -9,5 +9,7 @@
 		"--net=host",
 		"-e", "DISPLAY=${localEnv:DISPLAY}",
 		"-v", "/tmp/.X11-unix:/tmp/.X11-unix:rw"
-	]
+	],
+
+	"postCreateCommand": "cd lcr && rosdep update && rosdep install --from-paths src --ignore-src -r -y"
 }

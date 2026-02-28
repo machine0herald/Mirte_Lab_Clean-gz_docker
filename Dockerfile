@@ -45,8 +45,7 @@ COPY ./lcr /root/ws/lcr
 RUN cd /root/ws/lcr/src/mirte-ros-packages && \
     git submodule update --init --recursive
 
-# Install all ROS dependencies via rosdep
-RUN rosdep update && \
-    rosdep install --from-paths /root/ws/lcr/src --ignore-src -r -y
+# Refresh apt index for runtime container
+RUN apt-get update
 
 CMD ["bash"]

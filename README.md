@@ -18,35 +18,40 @@ updated to ROS 2 Jazzy or for use with Gazebo Harmonic / Fortress, this reposito
     git pull origin main
     ```
 
-2. install dependencies for this repository
-    ```sh
-    cd lcr
-    vcs import src/ < src/mirte-lc/sources.repos
-    vcs import src/ < src/mirte-gazebo/sources.repos
-    rosdep install -y --from-paths src/ --ignore-src --rosdistro humble
-    ```
-
-3. Install mirte ros packages rosdeps
+2. Update submodules recursively
     ```sh
     git submodule update --init --recursive
-    rosdep install -y --from-paths src/ --ignore-src --rosdistro humble
-    colcon build --symlink-install
+    cd lcr
     ```
 
-4. Configure display
+3. install dependencies for this mirte_lc then mirte-gazebo
+    ```sh
+    vcs import src/ < src/mirte_lc/sources.repos
+    vcs import src/ < src/mirte-gazebo/sources.repos
+    ```
+4. update mirte_ros_packages submodule
+    ```sh
+    cd src/mirte-ros-packages && git submodule update --init --recursive
+    ```
+
+5. update the git submodules again
+    ```sh
+    git submodule update --init --recursive
+    ```
+
+6. Configure display
     ```sh
     export DISPLAY=:0
     xhost +local:docker
     ```
-
-5. Start docker engine 
+7. Start docker engine 
     ```sh
     sudo systemctl start docker
     ```
 
 > NOTE:  It is reccomended to use the vscode extensions instead of the following
 
-6. Build the Docker container
+8. Build the Docker container
     ```sh
     # Navigate to the directory containing the Dockerfile
     cd /path/to/ros2_humble_dev
@@ -55,6 +60,11 @@ updated to ROS 2 Jazzy or for use with Gazebo Harmonic / Fortress, this reposito
     docker build -t mirte_labclean .
     ```
 
+9. Install mirte ros packages rosdeps and build
+    ```sh
+    rosdep install -y --from-paths src/ --ignore-src --rosdistro humble
+    colcon build --symlink-install
+    ```
 
 ## Docker Startup
 
