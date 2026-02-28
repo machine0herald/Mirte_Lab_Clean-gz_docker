@@ -1,4 +1,4 @@
-# Docker Container for Mirte Master Labclean application
+# Mirte Master Labclean Docker Container
 This is a Docker Container package running `Ubuntu Jammy` with `ROS 2 Humble` and `Gazebo Classic`. 
 > As the mirte ros packages have not (yet) been
 updated to ROS 2 Jazzy or for use with Gazebo Harmonic / Fortress, this repository could have deprecated or out of date packages soon.
@@ -62,7 +62,7 @@ docker build -t mirte_labclean .
 sudo systemctl start docker
 ```
 
-> NOTE:  It is reccomended to use the vscode extensions instead of the following two steps
+> NOTE:  It is reccomended to use the vscode extensions instead of the following
 
 2. Start docker container
 ```sh
@@ -80,8 +80,6 @@ docker run -it \
 # - You can exit without stopping using Ctrl+P Ctrl+Q
 # - To restart the container: docker start -ai mirte_labclean_container
 ```
-
-> end
 
 4. Test ros2 and gazebo installations with gazebo gui
 ```sh
