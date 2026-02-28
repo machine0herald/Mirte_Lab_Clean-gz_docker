@@ -2,6 +2,7 @@
 lcr/build
 lcr/install
 lcr/log
+lcr/src/color_util
 lcr/src/gazebo_grasp_fix
 lcr/src/mirte-gazebo
 lcr/src/mirte-ros-packages
