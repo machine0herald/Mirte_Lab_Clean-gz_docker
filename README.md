@@ -59,7 +59,7 @@ updated to ROS 2 Jazzy or for use with Gazebo Harmonic / Fortress, this reposito
     docker build -t mirte_labclean .
     ```
 
-8. Install mirte ros packages rosdeps and build
+8. Install mirte ros packages' rosdeps and build
     ```sh
     rosdep install -y --from-paths src/ --ignore-src --rosdistro humble
     colcon build --symlink-install
@@ -67,14 +67,19 @@ updated to ROS 2 Jazzy or for use with Gazebo Harmonic / Fortress, this reposito
 
 ## Docker Startup
 
-1. Start docker engine 
+1. For NVidia GPU's:
+    ```sh
+    sudo nvidia-ctk runtime configure --runtime=docker
+    ```
+
+2. Start docker engine 
     ```sh
     sudo systemctl start docker
     ```
 
 > NOTE:  It is reccomended to use the vscode extensions instead of the following
 
-2. Start docker container
+3. Start docker container
     ```sh
     # Run the container interactively with GUI support
     docker run -it \
@@ -91,13 +96,9 @@ updated to ROS 2 Jazzy or for use with Gazebo Harmonic / Fortress, this reposito
     # - To restart the container: docker start -ai mirte_labclean_container
     ```
 
-3. Test ros2 and gazebo installations with gazebo gui
+4. Test ros2 and gazebo installations with gazebo gui
     ```sh
     gazebo
-    ```
-    in another terminal:
-    ```sh
-    ros_2_control --list-controllers
     ```
 
 
