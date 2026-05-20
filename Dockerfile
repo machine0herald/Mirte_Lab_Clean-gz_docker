@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     git wget curl lsb-release gnupg2 software-properties-common \
     ros-humble-moveit \
     ros-humble-ros2-control \
+    ros-humble-foxglove-bridge \
     ros-humble-ros2-controllers \
     ros-humble-moveit-servo \
     ros-humble-moveit-visual-tools \
@@ -20,9 +21,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-humble-joint-state-publisher-gui \
     ros-humble-navigation2 \
     ros-humble-rosbridge-server \
+    ros-humble-tf-transformations \
     ros-humble-usb-cam \
     ros-humble-web-video-server \
-    ros-humble-tf-transformations \
+    ros-humble-rosbag2-storage-mcap \
     libgpiod-dev \
     libpcl-dev \
     ros-humble-pcl-ros \
@@ -32,8 +34,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Python tools
-RUN pip3 install --no-cache-dir gcovr pytest "numpy<2"
+RUN pip install --force-reinstall "numpy==2.2.6" "pandas==2.3.3"
 RUN pip3 install shapely
+RUN pip3 install trajgenpy
+RUN pip3 install geojson
 RUN pip3 install scikit-image
 RUN pip3 install scipy
 RUN pip3 install matplotlib
