@@ -18,5 +18,7 @@
     "-v", "/tmp/.X11-unix:/tmp/.X11-unix:rw"
   ],
 
+  "forwardPorts": [8765],
+
   "postCreateCommand": "bash -c 'apt-get update && source /opt/ros/humble/setup.bash && cd /workspaces/lcr && rosdep update && rosdep install --from-paths src --ignore-src -r -y'"
 }
