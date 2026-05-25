@@ -1,4 +1,5 @@
 .vscode/
+.venv/
 lcr/build
 lcr/install
 lcr/log
