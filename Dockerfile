@@ -25,6 +25,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-humble-usb-cam \
     ros-humble-web-video-server \
     ros-humble-rosbag2-storage-mcap \
+    ros-humble-py-trees \
+    ros-humble-py-trees-ros-interfaces \
+    ros-humble-py-trees-ros \
+    ros-humble-py-trees-ros-tutorials \
+    ros-humble-py-trees-ros-viewer \
     libgpiod-dev \
     libpcl-dev \
     ros-humble-pcl-ros \
@@ -34,7 +39,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Python tools
-RUN pip install --force-reinstall "numpy==2.2.6" "pandas==2.3.3"
+RUN pip install --force-reinstall "numpy==1.26.4" "pandas==2.3.3"
 RUN pip3 install shapely
 RUN pip3 install trajgenpy
 RUN pip3 install geojson
